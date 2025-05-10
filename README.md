@@ -4,6 +4,8 @@
 
 # how to use ?
 
+file 文件下有nlopt安装包，源码编译安装即可.
+
 cd build
 
 cmake ..
@@ -15,7 +17,7 @@ make
 # 效果
 
 <p align="center">
-  <img src="https://github.com/JackJu-HIT/FastPlanner/blob/master/files/sim.png" width = "420" height = "237"/>
+  <img src="https://github.com/JackJu-HIT/FastPlanner/blob/master/files/sim.png" width = "600" height = "300"/>
 </p> -->
 
 # 参考项目

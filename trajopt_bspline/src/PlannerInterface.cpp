@@ -236,6 +236,7 @@ namespace Planner
             pt.z = pvt(2);
             bspline.pts.push_back(pt);
         }
+        std::cout << "  bspline.pts size =" <<  bspline.pts.size() << std::endl;
 
         Eigen::VectorXd knots = traj_opt.getKnot();
 
@@ -243,6 +244,7 @@ namespace Planner
         {
             bspline.knots.push_back(knots(i));
         }
+        std::cout << "   knots size =" <<  knots.size() << std::endl;
 
         return bspline;
     }

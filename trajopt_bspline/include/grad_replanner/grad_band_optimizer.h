@@ -6,7 +6,7 @@
 #include "grad_replanner/utils/font_color.h"
 #include "sdf_map.h"
 #include <memory>
-#include "../include/quadrotor_msgs/time.h"
+#include "../include/quadrotor_msgs/time_.h"
 
 
 // Gradient and elasitc band optimization

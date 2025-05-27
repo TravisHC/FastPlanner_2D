@@ -65,10 +65,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/juchunyu/20231013/05map/01FastPlanner
+CMAKE_SOURCE_DIR = /home/juchunyu/20231013/05map/git/FastPlanner
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/juchunyu/20231013/05map/01FastPlanner/build
+CMAKE_BINARY_DIR = /home/juchunyu/20231013/05map/git/FastPlanner/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -97,14 +97,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/juchunyu/20231013/05map/01FastPlanner/build/CMakeFiles /home/juchunyu/20231013/05map/01FastPlanner/build/trajopt_bspline/CMakeFiles/progress.marks
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/juchunyu/20231013/05map/01FastPlanner/build/CMakeFiles 0
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/juchunyu/20231013/05map/git/FastPlanner/build/CMakeFiles /home/juchunyu/20231013/05map/git/FastPlanner/build/trajopt_bspline/CMakeFiles/progress.marks
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/juchunyu/20231013/05map/git/FastPlanner/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/clean
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/clean
 .PHONY : clean
 
 # The main clean target
@@ -114,33 +114,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/preinstall
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/preinstall
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-trajopt_bspline/CMakeFiles/main.dir/rule:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/CMakeFiles/main.dir/rule
-.PHONY : trajopt_bspline/CMakeFiles/main.dir/rule
+trajopt_bspline/CMakeFiles/trajopt.dir/rule:
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f CMakeFiles/Makefile2 trajopt_bspline/CMakeFiles/trajopt.dir/rule
+.PHONY : trajopt_bspline/CMakeFiles/trajopt.dir/rule
 
 # Convenience name for target.
-main: trajopt_bspline/CMakeFiles/main.dir/rule
+trajopt: trajopt_bspline/CMakeFiles/trajopt.dir/rule
 
-.PHONY : main
+.PHONY : trajopt
 
 # fast build rule for target.
-main/fast:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/build
-.PHONY : main/fast
+trajopt/fast:
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/build
+.PHONY : trajopt/fast
 
 src/PlannerInterface.o: src/PlannerInterface.cpp.o
 
@@ -148,7 +148,7 @@ src/PlannerInterface.o: src/PlannerInterface.cpp.o
 
 # target to build an object file
 src/PlannerInterface.cpp.o:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/PlannerInterface.cpp.o
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/PlannerInterface.cpp.o
 .PHONY : src/PlannerInterface.cpp.o
 
 src/PlannerInterface.i: src/PlannerInterface.cpp.i
@@ -157,7 +157,7 @@ src/PlannerInterface.i: src/PlannerInterface.cpp.i
 
 # target to preprocess a source file
 src/PlannerInterface.cpp.i:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/PlannerInterface.cpp.i
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/PlannerInterface.cpp.i
 .PHONY : src/PlannerInterface.cpp.i
 
 src/PlannerInterface.s: src/PlannerInterface.cpp.s
@@ -166,7 +166,7 @@ src/PlannerInterface.s: src/PlannerInterface.cpp.s
 
 # target to generate assembly for a file
 src/PlannerInterface.cpp.s:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/PlannerInterface.cpp.s
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/PlannerInterface.cpp.s
 .PHONY : src/PlannerInterface.cpp.s
 
 src/bezier_base.o: src/bezier_base.cpp.o
@@ -175,7 +175,7 @@ src/bezier_base.o: src/bezier_base.cpp.o
 
 # target to build an object file
 src/bezier_base.cpp.o:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/bezier_base.cpp.o
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/bezier_base.cpp.o
 .PHONY : src/bezier_base.cpp.o
 
 src/bezier_base.i: src/bezier_base.cpp.i
@@ -184,7 +184,7 @@ src/bezier_base.i: src/bezier_base.cpp.i
 
 # target to preprocess a source file
 src/bezier_base.cpp.i:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/bezier_base.cpp.i
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/bezier_base.cpp.i
 .PHONY : src/bezier_base.cpp.i
 
 src/bezier_base.s: src/bezier_base.cpp.s
@@ -193,7 +193,7 @@ src/bezier_base.s: src/bezier_base.cpp.s
 
 # target to generate assembly for a file
 src/bezier_base.cpp.s:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/bezier_base.cpp.s
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/bezier_base.cpp.s
 .PHONY : src/bezier_base.cpp.s
 
 src/bspline_replanner.o: src/bspline_replanner.cpp.o
@@ -202,7 +202,7 @@ src/bspline_replanner.o: src/bspline_replanner.cpp.o
 
 # target to build an object file
 src/bspline_replanner.cpp.o:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/bspline_replanner.cpp.o
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/bspline_replanner.cpp.o
 .PHONY : src/bspline_replanner.cpp.o
 
 src/bspline_replanner.i: src/bspline_replanner.cpp.i
@@ -211,7 +211,7 @@ src/bspline_replanner.i: src/bspline_replanner.cpp.i
 
 # target to preprocess a source file
 src/bspline_replanner.cpp.i:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/bspline_replanner.cpp.i
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/bspline_replanner.cpp.i
 .PHONY : src/bspline_replanner.cpp.i
 
 src/bspline_replanner.s: src/bspline_replanner.cpp.s
@@ -220,7 +220,7 @@ src/bspline_replanner.s: src/bspline_replanner.cpp.s
 
 # target to generate assembly for a file
 src/bspline_replanner.cpp.s:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/bspline_replanner.cpp.s
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/bspline_replanner.cpp.s
 .PHONY : src/bspline_replanner.cpp.s
 
 src/grad_band_optimizer.o: src/grad_band_optimizer.cpp.o
@@ -229,7 +229,7 @@ src/grad_band_optimizer.o: src/grad_band_optimizer.cpp.o
 
 # target to build an object file
 src/grad_band_optimizer.cpp.o:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/grad_band_optimizer.cpp.o
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/grad_band_optimizer.cpp.o
 .PHONY : src/grad_band_optimizer.cpp.o
 
 src/grad_band_optimizer.i: src/grad_band_optimizer.cpp.i
@@ -238,7 +238,7 @@ src/grad_band_optimizer.i: src/grad_band_optimizer.cpp.i
 
 # target to preprocess a source file
 src/grad_band_optimizer.cpp.i:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/grad_band_optimizer.cpp.i
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/grad_band_optimizer.cpp.i
 .PHONY : src/grad_band_optimizer.cpp.i
 
 src/grad_band_optimizer.s: src/grad_band_optimizer.cpp.s
@@ -247,35 +247,8 @@ src/grad_band_optimizer.s: src/grad_band_optimizer.cpp.s
 
 # target to generate assembly for a file
 src/grad_band_optimizer.cpp.s:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/grad_band_optimizer.cpp.s
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/grad_band_optimizer.cpp.s
 .PHONY : src/grad_band_optimizer.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
 
 src/non_uniform_bspline.o: src/non_uniform_bspline.cpp.o
 
@@ -283,7 +256,7 @@ src/non_uniform_bspline.o: src/non_uniform_bspline.cpp.o
 
 # target to build an object file
 src/non_uniform_bspline.cpp.o:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/non_uniform_bspline.cpp.o
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/non_uniform_bspline.cpp.o
 .PHONY : src/non_uniform_bspline.cpp.o
 
 src/non_uniform_bspline.i: src/non_uniform_bspline.cpp.i
@@ -292,7 +265,7 @@ src/non_uniform_bspline.i: src/non_uniform_bspline.cpp.i
 
 # target to preprocess a source file
 src/non_uniform_bspline.cpp.i:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/non_uniform_bspline.cpp.i
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/non_uniform_bspline.cpp.i
 .PHONY : src/non_uniform_bspline.cpp.i
 
 src/non_uniform_bspline.s: src/non_uniform_bspline.cpp.s
@@ -301,7 +274,7 @@ src/non_uniform_bspline.s: src/non_uniform_bspline.cpp.s
 
 # target to generate assembly for a file
 src/non_uniform_bspline.cpp.s:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/main.dir/build.make trajopt_bspline/CMakeFiles/main.dir/src/non_uniform_bspline.cpp.s
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(MAKE) -f trajopt_bspline/CMakeFiles/trajopt.dir/build.make trajopt_bspline/CMakeFiles/trajopt.dir/src/non_uniform_bspline.cpp.s
 .PHONY : src/non_uniform_bspline.cpp.s
 
 # Help Target
@@ -312,7 +285,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main"
+	@echo "... trajopt"
 	@echo "... src/PlannerInterface.o"
 	@echo "... src/PlannerInterface.i"
 	@echo "... src/PlannerInterface.s"
@@ -325,9 +298,6 @@ help:
 	@echo "... src/grad_band_optimizer.o"
 	@echo "... src/grad_band_optimizer.i"
 	@echo "... src/grad_band_optimizer.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 	@echo "... src/non_uniform_bspline.o"
 	@echo "... src/non_uniform_bspline.i"
 	@echo "... src/non_uniform_bspline.s"
@@ -342,6 +312,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/juchunyu/20231013/05map/01FastPlanner/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/juchunyu/20231013/05map/git/FastPlanner/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

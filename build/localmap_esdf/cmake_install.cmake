@@ -1,4 +1,4 @@
-# Install script for directory: /home/juchunyu/20231013/05map/01FastPlanner/localmap_esdf
+# Install script for directory: /home/juchunyu/20231013/05map/git/FastPlanner/localmap_esdf
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

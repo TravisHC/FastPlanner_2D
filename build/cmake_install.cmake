@@ -1,4 +1,4 @@
-# Install script for directory: /home/juchunyu/20231013/05map/01FastPlanner
+# Install script for directory: /home/juchunyu/20231013/05map/git/FastPlanner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/juchunyu/20231013/05map/01FastPlanner/build/localmap_esdf/cmake_install.cmake")
-  include("/home/juchunyu/20231013/05map/01FastPlanner/build/trajopt_bspline/cmake_install.cmake")
+  include("/home/juchunyu/20231013/05map/git/FastPlanner/build/trajopt_bspline/cmake_install.cmake")
+  include("/home/juchunyu/20231013/05map/git/FastPlanner/build/localmap_esdf/cmake_install.cmake")
 
 endif()
 
@@ -52,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/juchunyu/20231013/05map/01FastPlanner/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/juchunyu/20231013/05map/git/FastPlanner/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

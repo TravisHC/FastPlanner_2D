@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -Wall -std=c++17   CMakeFiles/main.dir/main.cpp.o  -o main  localmap_esdf/liblocal_map.a trajopt_bspline/libtrajopt.a localmap_esdf/liblocal_map.a /usr/local/lib/libnlopt.so.1.0.0 -lm -lpython2.7 

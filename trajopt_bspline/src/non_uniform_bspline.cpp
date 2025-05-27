@@ -14,6 +14,7 @@ NonUniformBspline::NonUniformBspline(Eigen::MatrixXd points, int order,
   // calculate knots vector
   this->interval = interval;
   this->u = Eigen::VectorXd::Zero(this->m + 1);
+  std::cout << "this->m + 1 =" << this->m + 1 << std::endl;
   for (int i = 0; i <= this->m; ++i) {
     if (i <= this->p)
       this->u(i) = double(-this->p + i) * this->interval;
@@ -24,6 +25,7 @@ NonUniformBspline::NonUniformBspline(Eigen::MatrixXd points, int order,
       this->u(i) = this->u(i - 1) + this->interval;
     }
   }
+  std::cout << "NonUniformBspline this->u.rows()  =" << this->u.rows() << std::endl;
 
   // show the result
   // cout << "p: " << p << "  n: " << n << "  m: " << m << endl;
@@ -109,6 +111,7 @@ Eigen::Vector3d NonUniformBspline::evaluateDeBoor(double t) {
 Eigen::MatrixXd NonUniformBspline::getDerivativeControlPoints() {
   // The derivative of a b-spline is also a b-spline, its order become p-1
   // control point Qi = p*(Pi+1-Pi)/(ui+p+1-ui+1)
+  std::cout << "control_points.rows()  =" << control_points.rows()  << std::endl;
   Eigen::MatrixXd ctp = Eigen::MatrixXd::Zero(control_points.rows() - 1, 3);
   for (int i = 0; i < ctp.rows(); ++i) {
     ctp.row(i) = p * (control_points.row(i + 1) - control_points.row(i)) /
@@ -118,15 +121,20 @@ Eigen::MatrixXd NonUniformBspline::getDerivativeControlPoints() {
 }
 
 NonUniformBspline NonUniformBspline::getDerivative() {
+  std::cout << "start...." << std::endl;
   Eigen::MatrixXd ctp = this->getDerivativeControlPoints();
 
   NonUniformBspline derivative =
       NonUniformBspline(ctp, p - 1, this->interval, false);
-
+      std::cout << "getDerivative p=" << p-1 << std::endl;
+      std::cout << "ctp .size =" << ctp.rows()<< std::endl;
+  std::cout << "getDerivative this->u.rows()  =" << this->u.rows() << std::endl;
   /* cut the first and last knot */
   Eigen::VectorXd knot(this->u.rows() - 2);
   knot = this->u.segment(1, this->u.rows() - 2);
   derivative.setKnot(knot);
+
+  std::cout << "endl..." << std::endl;
 
   return derivative;
 }

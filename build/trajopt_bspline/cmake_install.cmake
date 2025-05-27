@@ -1,4 +1,4 @@
-# Install script for directory: /home/juchunyu/20231013/05map/01FastPlanner/trajopt_bspline
+# Install script for directory: /home/juchunyu/20231013/05map/git/FastPlanner/trajopt_bspline
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

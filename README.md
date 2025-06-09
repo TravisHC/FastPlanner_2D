@@ -23,3 +23,6 @@ make
 # 参考项目
  https://github.com/HKUST-Aerial-Robotics/Teach-Repeat-Replan.git
 
+ # 了解原理和代码如何使用请参考下述文章
+
+ https://mp.weixin.qq.com/s/wXGGhPk_45hwiDPgXgCiRw

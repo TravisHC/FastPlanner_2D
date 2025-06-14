@@ -16,8 +16,8 @@ using namespace cv;  // OpenCV命名空间
 
 // 颜色定义
 const Scalar COLOR_GLOBAL_TRAJ = Scalar(255, 0, 0);    // 蓝色 - 全局轨迹
-const Scalar COLOR_LOCAL_TRAJ = Scalar(0, 0, 255);     // 红色 - 局部轨迹
-const Scalar COLOR_OBSTACLE = Scalar(0, 255, 0);       // 绿色 - 障碍物
+const Scalar COLOR_LOCAL_TRAJ = Scalar(0, 255, 0);     // 绿色 - 局部轨迹
+const Scalar COLOR_OBSTACLE = Scalar(0, 0, 255);       // 红色 - 障碍物
 
 // 坐标转换函数：将世界坐标转换为图像坐标
 Point2f worldToImage(const double x, const double y, 
@@ -105,60 +105,50 @@ int main()
     }
 
     // 显示参数
-    const double DISPLAY_SCALE = 1.0;  // 显示缩放因子
-    const int WINDOW_WIDTH = 1000 * 1e3;     // 窗口最小宽度
-    const int WINDOW_HEIGHT = 800 * 1e3;     // 窗口最小高度
+    const double DISPLAY_RESOLUTION = 0.01;  // 显示单元格 0.02m
 
-    // OpenCV可视化
-    int img_width = static_cast<int>(x_size / resolution);
-    int img_height = static_cast<int>(y_size / resolution);
-    
-    // 确保图像尺寸不超过窗口大小
-    if (img_width * DISPLAY_SCALE > WINDOW_WIDTH) {
-        img_width = static_cast<int>(WINDOW_WIDTH / DISPLAY_SCALE);
-    }
-    if (img_height * DISPLAY_SCALE > WINDOW_HEIGHT) {
-        img_height = static_cast<int>(WINDOW_HEIGHT / DISPLAY_SCALE);
-    }
+    // 显示的像素数要跟显示分辨率绑定
+    int img_width = static_cast<int>(x_size / DISPLAY_RESOLUTION);
+    int img_height = static_cast<int>(y_size / DISPLAY_RESOLUTION);
     
     Mat visualization = Mat::zeros(img_height, img_width, CV_8UC3);
     visualization.setTo(Scalar(255, 255, 255));  // 白色背景
 
     // 绘制全局轨迹
     for (size_t i = 0; i < global_x.size() - 1; i++) {
-        Point2f p1 = worldToImage(global_x[i], global_y[i], resolution, Point2f(0, 0));
-        Point2f p2 = worldToImage(global_x[i+1], global_y[i+1], resolution, Point2f(0, 0));
+        Point2f p1 = worldToImage(global_x[i], global_y[i], DISPLAY_RESOLUTION, Point2f(0, 0));
+        Point2f p2 = worldToImage(global_x[i+1], global_y[i+1], DISPLAY_RESOLUTION, Point2f(0, 0));
         line(visualization, p1, p2, COLOR_GLOBAL_TRAJ, 2, LINE_AA);
     }
 
     // 绘制局部轨迹
     for (size_t i = 0; i < local_plan_x.size() - 1; i++) {
-        Point2f p1 = worldToImage(local_plan_x[i], local_plan_y[i], resolution, Point2f(0, 0));
-        Point2f p2 = worldToImage(local_plan_x[i+1], local_plan_y[i+1], resolution, Point2f(0, 0));
+        Point2f p1 = worldToImage(local_plan_x[i], local_plan_y[i], DISPLAY_RESOLUTION, Point2f(0, 0));
+        Point2f p2 = worldToImage(local_plan_x[i+1], local_plan_y[i+1], DISPLAY_RESOLUTION, Point2f(0, 0));
         line(visualization, p1, p2, COLOR_LOCAL_TRAJ, 2, LINE_AA);
     }
 
     // 绘制障碍物
     for (const auto& obs : obstacle) {
-        Point2f center = worldToImage(obs.x, obs.y, resolution, Point2f(0, 0));
-        circle(visualization, center, 5, COLOR_OBSTACLE, -1, LINE_AA);
+        Point2f center = worldToImage(obs.x, obs.y, DISPLAY_RESOLUTION, Point2f(0, 0));
+        circle(visualization, center, 25, COLOR_OBSTACLE, -1, LINE_AA);
     }
 
     // 添加图例
-    putText(visualization, "Global Trajectory", Point(10, 20), 
-            FONT_HERSHEY_SIMPLEX, 0.5, COLOR_GLOBAL_TRAJ, 1, LINE_AA);
-    putText(visualization, "Local Trajectory", Point(10, 45), 
-            FONT_HERSHEY_SIMPLEX, 0.5, COLOR_LOCAL_TRAJ, 1, LINE_AA);
-    putText(visualization, "Obstacles", Point(10, 70), 
-            FONT_HERSHEY_SIMPLEX, 0.5, COLOR_OBSTACLE, 1, LINE_AA);
+    putText(visualization, "Global Trajectory", Point(700, 30), 
+            FONT_HERSHEY_SIMPLEX, 1.0, COLOR_GLOBAL_TRAJ, 1, LINE_AA);
+    putText(visualization, "Local Trajectory", Point(700, 65), 
+            FONT_HERSHEY_SIMPLEX, 1.0, COLOR_LOCAL_TRAJ, 1, LINE_AA);
+    putText(visualization, "Obstacles", Point(700, 100), 
+            FONT_HERSHEY_SIMPLEX, 1.0, COLOR_OBSTACLE, 1, LINE_AA);
 
     // 创建可调整大小的窗口
     namedWindow("Trajectory Visualization", WINDOW_NORMAL);
     
     // 设置窗口初始大小
     resizeWindow("Trajectory Visualization", 
-                static_cast<int>(img_width * DISPLAY_SCALE), 
-                static_cast<int>(img_height * DISPLAY_SCALE));
+                static_cast<int>(img_width), 
+                static_cast<int>(img_height));
     
     // 显示结果
     imshow("Trajectory Visualization", visualization);

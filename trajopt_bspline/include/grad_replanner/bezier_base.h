@@ -13,7 +13,7 @@ Several initializer are provided, and the instance is initialized according to t
 #include <stdio.h>
 #include <iostream>
 #include <string>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <vector>
 
 class Bernstein

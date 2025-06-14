@@ -6,7 +6,7 @@
  * */
 #include "local_perception/sdf_map.h"
 #include <memory>
-#include <Eigen/Eigen>
+#include <eigen3/Eigen/Eigen>
 
 int main()
 {

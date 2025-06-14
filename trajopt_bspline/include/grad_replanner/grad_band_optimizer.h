@@ -2,7 +2,7 @@
 #define _GRAD_BAND_OPTIMIZER_H_
 
 // #include <ros/ros.h>
-#include <Eigen/Eigen>
+#include <eigen3/Eigen/Eigen>
 #include "grad_replanner/utils/font_color.h"
 #include "sdf_map.h"
 #include <memory>

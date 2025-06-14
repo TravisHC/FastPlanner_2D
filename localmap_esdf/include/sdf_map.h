@@ -2,7 +2,7 @@
 
 #define _SDF_MAP_H
 
-#include <Eigen/Eigen>
+#include <eigen3/Eigen/Eigen>
 #include <iostream>
 #include <tuple>
 #include <queue>

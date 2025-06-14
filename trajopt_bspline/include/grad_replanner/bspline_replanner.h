@@ -5,7 +5,7 @@
 #include "grad_replanner/non_uniform_bspline.h"
 #include "sdf_map.h"
 
-#include <Eigen/Eigen>
+#include <eigen3/Eigen/Eigen>
 #include <memory>
 
 class BsplineReplanner {

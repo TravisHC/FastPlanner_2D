@@ -8,7 +8,12 @@ include_directories(/matplotlib-cpp)
 include_directories(./inlcude/grad_replanner)
 include_directories(trajopt_bspline/include/quadrotor_msgs)
 
-link_directories(/usr/include/python2.7)
+# link_directories(/usr/include/python2.7)
+
+# 添加 Python 3 支持
+# find_package(Python3 COMPONENTS Development REQUIRED)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
 
 find_package(Eigen3 REQUIRED)
 find_package(NLopt REQUIRED )
@@ -17,6 +22,7 @@ set(Eigen3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 include_directories( 
     include 
     ${Eigen3_INCLUDE_DIRS} 
+    # ${Python3_INCLUDE_DIRS}
 )
 
 add_library(        trajopt  STATIC
@@ -33,6 +39,6 @@ target_link_libraries(
                         trajopt
                         local_map
                         ${NLOPT_LIBRARIES}  
-                         python2.7 
-                         ${PYTHON_LIBRARIES}
+                        # ${Python3_LIBRARIES}
+                        ${OpenCV_LIBS}
                      )

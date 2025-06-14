@@ -6,7 +6,7 @@
 #include <ros/ros.h>
 #include <visualization_msgs/Marker.h>
 
-#include <Eigen/Eigen>
+#include <eigen3/Eigen/Eigen>
 
 #include <stdlib.h>
 #include <vector>

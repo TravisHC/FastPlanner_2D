@@ -1,7 +1,7 @@
 #ifndef _UNIFORM_BSPLINE_H_
 #define _UNIFORM_BSPLINE_H_
 
-#include <Eigen/Eigen>
+#include <eigen3/Eigen/Eigen>
 #include <iostream>
 #include "grad_replanner/utils/font_color.h"
 using namespace std;

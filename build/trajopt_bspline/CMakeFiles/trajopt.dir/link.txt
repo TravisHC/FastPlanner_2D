@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtrajopt.a  CMakeFiles/trajopt.dir/src/PlannerInterface.cpp.o CMakeFiles/trajopt.dir/src/bspline_replanner.cpp.o CMakeFiles/trajopt.dir/src/grad_band_optimizer.cpp.o CMakeFiles/trajopt.dir/src/non_uniform_bspline.cpp.o CMakeFiles/trajopt.dir/src/bezier_base.cpp.o
-/usr/bin/ranlib libtrajopt.a
